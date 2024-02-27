@@ -5,24 +5,19 @@
 <h2>JavaScript Encapsulation</h2>
 
 <script>
-//Encapsulation Technique 1: closure scope
-
-function createCircle(radius) {
+function createCircleClosure(radius) {
   return {
       area: function() {
           return radius * radius * Math.PI;
       }
-  }
-};
+  };
+}
 
-var circle1 = createCircle();
+var circle1 = createCircleClosure(5);
 
-//Write console.log here
+console.log("Area is " + circle1.area());
 
-
-//Encapsulation Technique 2: private variables
-
-function createCircle(radius) {
+function createCirclePrivate(radius) {
     var diameter = radius * 2;
 
     return {
@@ -32,16 +27,12 @@ function createCircle(radius) {
         circumference: function() {
             return diameter * Math.PI;
         }
-    }
-};
+    };
+}
 
-var circle2 = createCircle();
+var circle2 = createCirclePrivate(3);
 
-//Write console.log here
-
-
+console.log("Circumference is " + circle2.circumference());
+console.log("Diameter is " + circle2.diameter);
 </script>
 
-
-</body>
-</html>
